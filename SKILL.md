@@ -1,6 +1,6 @@
 ---
 name: hello-world
-description: A simple greeting skill that says hello to the user or a specified name. Use when you need to generate a friendly greeting message or demonstrate basic skill functionality.
+description: A greeting skill that ONLY generates simple hello/greeting messages. NOT for calculations, data processing, or code execution. Use ONLY for greeting requests like "say hello", "greet someone", or similar.
 license: MIT
 metadata:
   author: smallnest
@@ -9,18 +9,24 @@ metadata:
 
 # Hello World Skill
 
-This is the simplest possible skill that demonstrates the Agent Skills format. It generates a friendly greeting message.
+This skill ONLY generates simple greeting messages. It is NOT suitable for calculations, data processing, or any code execution tasks.
 
 ## When to Use This Skill
 
-Use this skill when:
-- The user asks for a greeting or to be greeted
-- You need to say hello to someone by name
-- You want to test or demonstrate basic skill functionality
+**ONLY** use this skill when:
+- The user explicitly asks to "say hello" or "greet" someone
+- The user wants a simple greeting message
+- Testing basic greeting functionality
+
+**DO NOT** use this skill for:
+- Mathematical calculations (use calculator-skill instead)
+- Data processing or analysis
+- Code execution
+- Any task requiring computation
 
 ## How It Works
 
-This skill generates a greeting message in the format "Hello, [name]!" where [name] can be:
+This skill generates a simple greeting message in the format "Hello, [name]!" where [name] can be:
 - A name provided by the user
 - "World" as the default if no name is specified
 
@@ -29,7 +35,9 @@ This skill generates a greeting message in the format "Hello, [name]!" where [na
 1. Check if the user has provided a name to greet
 2. If no name is provided, use "World" as the default
 3. Generate the greeting message: "Hello, [name]!"
-4. Optionally include a timestamp of when the greeting was generated
+4. Optionally include a timestamp
+
+**IMPORTANT:** This skill should NOT invoke any tools for calculations or code execution. It only returns a simple text greeting.
 
 ## Examples
 
@@ -63,6 +71,16 @@ Hello, Bob!
 Hello, Charlie!
 Generated at: 2024-12-25 10:30:00 UTC
 ```
+
+## What This Skill Does NOT Do
+
+- ❌ Mathematical calculations
+- ❌ Data processing
+- ❌ Code execution
+- ❌ File operations
+- ❌ Web requests
+
+If a user request involves any of the above, use a different skill (e.g., calculator-skill for calculations).
 
 ## Edge Cases
 
